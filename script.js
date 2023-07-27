@@ -5,7 +5,6 @@ const foregroundLayer = document.querySelector('.foreground-layer');
 function handleResize() {
     // Get the width of the screen
     const screenWidth = window.innerWidth;
-
     // Adjust the background image position based on the screen width
     backgroundLayer.style.backgroundPosition = screenWidth > 768 ? 'right center' : 'center center';
 }
