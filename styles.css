@@ -1,40 +1,122 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
+/* Converted from SCSS to CSS */
+
+/* Variables */
+:root {
+  --bronze: #130d0a;
+  --white: #fff;
+  --heroHeight: 800px;
 }
 
-.parallax-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Use viewport height to ensure full screen height */
-    overflow: hidden;
-}
-.parallax-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    will-change: transform; /* Improves performance for smoother scrolling */
+/* Global Styles */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bronze);
+  font-family: "Playfair Display", serif;
+  color: var(--white);
 }
 
-.background-layer {
-    background-image: url('https://wallpapercave.com/wp/wp10952804.jpg');
-    z-index: 1; /* Place the background layer behind other layers */
+#hero {
+  height: var(--heroHeight);
+  overflow: hidden;
+  position: relative;
 }
 
-.cliff-layer {
-    background-image: url('https://www.firewatchgame.com/images/parallax/parallax7@2x.png');
-    background-position: 70% center; /* Move the image 70% to the right */
-    background-size: 150%; /* Crop about 70% of the image */
-    z-index: 2; /* Place the cliff layer above the background layer */
+#content {
+  background-color: var(--bronze);
 }
 
-.foreground-layer {
-    background-image: url('https://www.firewatchgame.com/images/parallax/parallax8.png');
-    z-index: 3; /* Place the foreground layer above the cliff layer */
+.layer {
+  background-position: bottom center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: var(--heroHeight);
+  position: fixed;
+  z-index: -1;
+}
+
+#hero-mobile {
+  display: none;
+  background: url("https://i.ibb.co/d7hw559/full-illustration.png") no-repeat center bottom / cover;
+  height: 320px;
+}
+
+/* Section Styles */
+.first-section {
+  padding: 50px 0 20px 0;
+}
+
+.text-header {
+  font-size: 50px;
+  text-align: center;
+}
+
+h1 {
+  line-height: 120%;
+  margin-bottom: 30px;
+}
+
+p {
+  color: #ede0d5;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#hero,
+.layer {
+  min-height: 800px;
+  max-width: 1900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Parallax Layers */
+.layer-bg {
+  background-image: url("https://images5.alphacoders.com/559/559874.jpg");
+}
+
+.layer-1 {
+  background-image: url("https://i.imgur.com/R3uHfqT.png");
+  background-position: left bottom;
+}
+
+.layer-2 {
+  background-image: url("https://www.nicepng.com/png/full/404-4043435_includes-highly-detailed-meshes-and-corresponding-textures-volcano.png");
+}
+
+.layer-3 {
+  background-image: url("https://www.nicepng.com/png/full/149-1491645_cliff-precut-3-by-stockopedia-d3jb432-cliff-transparent.png");
+  background-position: right bottom;
+  background-size: 40%;
+}
+
+.layer-4 {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png");
+}
+
+.layer-overlay {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png");
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  #hero {
+    display: none;
+  }
+
+  #hero-mobile {
+    display: block;
+  }
+}
+
+/* Additional Styles */
+.tutorial-link {
+  color: var(--white);
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.tutorial-link:hover {
+  color: #ede0d5;
 }
