@@ -30,6 +30,8 @@ body, html {
 
 .cliff-layer {
     background-image: url('https://www.firewatchgame.com/images/parallax/parallax7@2x.png');
+    background-position: 70% center; /* Move the image 70% to the right */
+    background-size: 150%; /* Crop about 70% of the image */
     z-index: 2; /* Place the cliff layer above the background layer */
 }
 
