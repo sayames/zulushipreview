@@ -36,8 +36,4 @@ body, html {
 }
 
 .foreground-layer {
-    background-image: url('https://www.firewatchgame.com/images/parallax/parallax8.png');
-    background-size: cover;
-    height: 90%; /* Adjust the height as needed, here it's set to 90% */
-    z-index: 3; /* Place the foreground layer above the cliff layer */
-}
+   
