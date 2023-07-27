@@ -1,12 +1,16 @@
-const backgroundLayer = document.querySelector('.background-layer');
-const cliffLayer = document.querySelector('.cliff-layer');
-const foregroundLayer = document.querySelector('.foreground-layer');
 
-window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
 
-    // Adjust the translateY position based on scroll speed
-    backgroundLayer.style.transform = `translateY(-${scrollY * 0.2}px)`; // Adjust the scroll speed factor as needed
-    cliffLayer.style.transform = `translateY(-${scrollY * 0.5}px)`; // Adjust the scroll speed factor as needed
-    foregroundLayer.style.transform = `translateY(-${scrollY * 1}px)`; // Adjust the scroll speed factor as needed
-});
+window.addEventListener 'scroll', (event) ->
+  topDistance = @pageYOffset 
+  layers = document.querySelectorAll("[data-type='parallax']")
+  
+  for layer in layers
+    depth = layer.getAttribute('data-depth')
+    movement = -(topDistance * depth)
+    translate3d = 'translate3d(0, ' + movement + 'px, 0)'
+    layer.style['-webkit-transform'] = translate3d
+    layer.style['-moz-transform'] = translate3d
+    layer.style['-ms-transform'] = translate3d
+    layer.style['-o-transform'] = translate3d
+    layer.style.transform = translate3d
+  return
