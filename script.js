@@ -1,16 +1,12 @@
 const backgroundLayer = document.querySelector('.background-layer');
+const cliffLayer = document.querySelector('.cliff-layer');
 const foregroundLayer = document.querySelector('.foreground-layer');
 
-// Function to handle window resize event
-function handleResize() {
-    // Get the width of the screen
-    const screenWidth = window.innerWidth;
-    // Adjust the background image position based on the screen width
-    backgroundLayer.style.backgroundPosition = screenWidth > 768 ? 'right center' : 'center center';
-}
+window.addEventListener('scroll', function() {
+    const scrollY = window.scrollY;
 
-// Add event listener for window resize
-window.addEventListener('resize', handleResize);
-
-// Call the handleResize function on page load
-handleResize();
+    // Adjust the translateY position based on scroll speed
+    backgroundLayer.style.transform = `translateY(-${scrollY * 0.2}px)`; // Adjust the scroll speed factor as needed
+    cliffLayer.style.transform = `translateY(-${scrollY * 0.5}px)`; // Adjust the scroll speed factor as needed
+    foregroundLayer.style.transform = `translateY(-${scrollY * 1}px)`; // Adjust the scroll speed factor as needed
+});
